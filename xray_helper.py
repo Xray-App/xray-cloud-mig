@@ -961,16 +961,12 @@ def GetTest(headers,id):
 
 def removeTestStepsFromTest(headers,mutation,testId):
     logging.debug("Remove Test steps from Test")
-    testCloud = GetTest(headers,testId)
-    logging.info(testCloud)
-    for step in testCloud["steps"]:
-        mutation = mutation  + " "+ randomString(10) + ": removeTestStep( " \
-        "       stepId: \""+ step["id"] +"\" " \
-        "       ) "
-        #logging.info("Mutation: " + mutation)
-        xray_variables.GLOBAL_mutation_counter  = xray_variables.GLOBAL_mutation_counter +1
-        if xray_variables.GLOBAL_mutation_counter >= xray_variables.GLOBAL_maxMutationsForPack:
-            packUpdateandSend(headers,GLOBAL_url_xray,mutation)
-            mutation=""
-            xray_variables.GLOBAL_mutation_counter = 0
+    mutation = mutation  + " "+ randomString(10) + ": removeAllTestSteps( " \
+    "       issueId: \""+ testId +"\" " \
+    "       ) "
+    xray_variables.GLOBAL_mutation_counter  = xray_variables.GLOBAL_mutation_counter +1
+    if xray_variables.GLOBAL_mutation_counter >= xray_variables.GLOBAL_maxMutationsForPack:
+        packUpdateandSend(headers,GLOBAL_url_xray,mutation)
+        mutation=""
+        xray_variables.GLOBAL_mutation_counter = 0
     return mutation
