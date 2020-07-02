@@ -36,7 +36,7 @@ Note : You will need to install some extra modules as such you may want to creat
   
   
 - Pre conditions have been properly handled for been compatible with Atlassian Cloud.X-ray uses 'Pre-Condition' issue type On-Premise while in Cloud uses 'Precondition'. Issues need to be moved/update accordingly.
-- Projects in the scope of scripts have been [Re-indexed](https://confluence.xpand-it.com/display/XRAYCLOUD/Project+Settings%3A+Re-Indexing)if you are migrating project by project. 
+- Projects in the scope of scripts have been [Re-indexed](https://confluence.xpand-it.com/display/XRAYCLOUD/Project+Settings%3A+Re-Indexing). 
 - The types of tests in Cloud musts contain all test types that will be sync ( Default are : Generic , Cucumber and Manual )
 - Test Status and Step Test Status need to be replicated or mapping need to be done in xray_variables.py
 - Issue Types that are handled by Xray need to be properly in Sync as when importing project Xray might not recognize On Premise issue Types ( Test , Test Plan, Test Set ) as Xray Issue Types.

@@ -10,8 +10,8 @@
 #    documentation and/or other materials provided with the distribution.
 # 3. All advertising materials mentioning features or use of this software
 #    must display the following acknowledgement:
-#    This product includes software developed by the <organization>.
-# 4. Neither the name of the <organization> nor the
+#    This product includes software developed by the Xblend Software, Lda.
+# 4. Neither the name of the Xblend Software, Lda nor the
 #    names of its contributors may be used to endorse or promote products
 #    derived from this software without specific prior written permission.
 
