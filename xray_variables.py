@@ -93,3 +93,5 @@ GLOBAL_jqlPlanFolder='"issuetype" = "Test Plan" and project = "Test Project" ord
 
 GLOBAL_defaultUser="admin"
 GLOBAL_StepInitialStatus="TODO"
+
+GLOBAL_XrayVersionIsObove4="No"

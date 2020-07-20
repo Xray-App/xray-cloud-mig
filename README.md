@@ -55,6 +55,7 @@ There is some cache associated with this as such you might have to wait until a 
 - Issue Types that are handled by Xray need to be properly in Sync as when importing project Xray might not recognize On Premise issue Types ( Test , Test Plan, Test Set ) as Xray Issue Types.
 - Enable "Create Inline Test Environments" in Project Test Environments if you are importing and want to have Test Environments migrated.
 - Disable "Fail all steps" configuration item.
+- If you are running a version of Xray above 4.0.0 be sure to set GLOBAL_XrayVersionIsObove4 to "Yes".This is important as it 4.0.0 contains breaking changes.
 
 
 
@@ -98,7 +99,7 @@ This is due to limitation on the Jira api that cannot be resolved by this script
 
 ## Wish List
 
-
+-- Support [Test Runs customfields](https://confluence.xpand-it.com/display/XRAY/Configuring+Test+Run+Custom+Fieldsg)  
 
 
 ## Logging
@@ -414,5 +415,7 @@ _Notes_
 | GLOBAL_maxMutationsForPack  | GLOBAL_maxMutationsForPack=20    | Max o mutations to push    |
 | GLOBAL_MAX_ATTACH_SIZE  | GLOBAL_MAX_ATTACH_SIZE=10000000    | Max size for attachments there is currently a limit   |
 | GLOBAL_SIMULATE  | GLOBAL_SIMULATE=False     | Update Xray or it executes without push anything to the cloud.    |
+| GLOBAL_XrayVersionIsObove4  | GLOBAL_SIMULATE="Yes"     | Flags that we are using Xray 4.0. This is important due to breaking changes in Steps.Default is "No"|
+
 
 
