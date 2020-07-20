@@ -418,7 +418,7 @@ _Notes_
 | GLOBAL_maxMutationsForPack  | GLOBAL_maxMutationsForPack=20    | Max o mutations to push    |
 | GLOBAL_MAX_ATTACH_SIZE  | GLOBAL_MAX_ATTACH_SIZE=10000000    | Max size for attachments there is currently a limit   |
 | GLOBAL_SIMULATE  | GLOBAL_SIMULATE=False     | Update Xray or it executes without push anything to the cloud.    |
-| GLOBAL_XrayVersionIsObove4  | GLOBAL_SIMULATE="Yes"     | Flags that we are using Xray 4.0. This is important due to breaking changes in Steps.Default is "No"|
+| GLOBAL_XrayVersionIsObove4  | GLOBAL_XrayVersionIsObove4="Yes"     | Flags that we are using Xray 4.0. This is important due to breaking changes in Steps.Default is "No"|
 
 
 
