@@ -286,19 +286,19 @@ def addToManualTestTypeUpdate(headers,id,type,definition,mutation,key):
         result="" 
         ## handling exceptions...
         if (xray_variables.GLOBAL_XrayVersionIsObove4 == "Yes"):
-            if hasattr(step, 'step'):
-                steps = step.step
-            if hasattr(step, 'data'):
-                data = step.data
-            if hasattr(step, 'result'):
-                result = step.result
-        else:
             if hasattr(step.fields, 'Action'):
                 steps = step.fields.Action
             if hasattr(step.fields, 'Data'):
                 data = step.fields.Data
             if hasattr(step.fields, 'Expected Result'):
                 result = getattr(step.fields, 'Expected Result')
+        else:
+            if hasattr(step, 'step'):
+                steps = step.step
+            if hasattr(step, 'data'):
+                data = step.data
+            if hasattr(step, 'result'):
+                result = step.result
         
 
         if  len(data) > 8192:
