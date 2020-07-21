@@ -59,6 +59,7 @@ Note : You will need to install some extra modules as such you may want to creat
 - Enable "Create Inline Test Environments" in Project Test Environments if you are importing and want to have Test Environments migrated.
 - Disable "Fail all steps" configuration item.
 - If you are running a version of Xray above 4.0.0 be sure to set GLOBAL_XrayVersionIsObove4 to "Yes".This is important as it 4.0.0 contains breaking changes.
+- If running a version above 4.0 please update to the latest version of the plugin ( minumium above 4.1 ) 4.0.x has a bug in the rest api that can lead to errors in the "execution finish dates" for tests runs that went through a "reset of the execution".
 
 
 
