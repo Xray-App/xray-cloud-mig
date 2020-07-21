@@ -716,12 +716,15 @@ def updateTestRunStepComment(headers,mutation,run, comment,testRunId):
         xray_variables.GLOBAL_mutation_counter = 0
     return mutation
 
+
 def updateTestRunStepStatus(headers,mutation,run, status,testRunId):
     logging.debug("update Test Run Step Comment")
     mutation = mutation  + " "+ randomString() + ": updateTestRunStepStatus( " \
         "       testRunId: \""+ testRunId +"\", " \
         "       stepId: \""+ run +"\", " \
-        "       status: \"" + status + "\" )"
+        "       status: \"" + status + "\" ) { " \
+        "       warnings " \
+        "   }"
     logging.debug("Mutation: " + mutation)
     xray_variables.GLOBAL_mutation_counter  = xray_variables.GLOBAL_mutation_counter +1
     if xray_variables.GLOBAL_mutation_counter >= xray_variables.GLOBAL_maxMutationsForPack:
