@@ -80,6 +80,8 @@ Note : You will need to install some extra modules as such you may want to creat
 
 - **It doesn't create any issues in Cloud**. This tool should be seen as a syncronizer of Xray data only. 
 - Its not a two way syncronizer. It one way sycronizer OnPremise -> Cloud
+- It doesn't import gadgets, dashboards or reports
+- It doesn't [Test Runs customfields](https://confluence.xpand-it.com/display/XRAY/Configuring+Test+Run+Custom+Fieldsg)  or   [Test Step customfields](https://docs.getxray.app/display/XRAY/Xray+4.0.0+Release+Notes#Xray4.0.0ReleaseNotes-TestStepCustomFields)
 
 ## Limitations
 
@@ -103,7 +105,7 @@ This is due to limitation on the Jira api that cannot be resolved by this script
 
 ## Wish List
 
--- Support [Test Runs customfields](https://confluence.xpand-it.com/display/XRAY/Configuring+Test+Run+Custom+Fieldsg)  
+--  Support [Test Runs customfields](https://confluence.xpand-it.com/display/XRAY/Configuring+Test+Run+Custom+Fieldsg)  and   [Test Step customfields](https://docs.getxray.app/display/XRAY/Xray+4.0.0+Release+Notes#Xray4.0.0ReleaseNotes-TestStepCustomFields)
 
 
 ## Logging
