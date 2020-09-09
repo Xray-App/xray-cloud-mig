@@ -19,9 +19,17 @@ Note : You will need to install some extra modules as such you may want to creat
 - Assuming that migration to a cloud environment as been done using standard "export" and "import" of the XML instance or using [Cloud migration assistant](https://marketplace.atlassian.com/apps/1222010/jira-cloud-migration-assistant?hosting=server&tab=overview)
   There is one important item that you need to validate, **you need to make sure that your Issue types are been recognized by Xray**. 
   If you find in your instance reference to "Xray Test" Issue Type and other devivatives from it along side with the ones that you imported from server and if you don't see any functionalities of Xray in issues that you imported then **your imported issues are not recognized as Xray issues**.
+
+
   To fix this you will need to :
+
+
       - move (using standard move Jira functionality) all migrated issues linked to Xray OnPremise Issue types to the Xray Cloud issues Types , or 
+
+
       - or "transform" migrated Xray issue types into Xray Cloud issue types
+
+      
           1)[Get the entity properties from Xray Cloud issue types](https://developer.atlassian.com/cloud/jira/platform/rest/v3/?utm_source=%2Fcloud%2Fjira%2Fplatform%2Frest&utm_medium=302#api-rest-api-3-issuetype-issueTypeId-properties-propertyKey-get) and [set](https://developer.atlassian.com/cloud/jira/platform/rest/v3/?utm_source=%2Fcloud%2Fjira%2Fplatform%2Frest&utm_medium=302#api-rest-api-3-issuetype-issueTypeId-properties-propertyKey-put) them into migrated issue types
           
           2)Delete cloud Xray Issue Types  (all the ones that start with "Xray ..") 
