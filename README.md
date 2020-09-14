@@ -15,7 +15,7 @@ Note : You will need to install some extra modules as such you may want to creat
 - pandas (pip install pandas)
 
 ## Assumptions/Requirements
-
+[Get the entity properties from Xray Cloud issue types]( https://developer.atlassian.com/cloud/jira/platform/rest/v3/?utm_source=%2Fcloud%2Fjira%2Fplatform%2Frest&utm_medium=302#api-rest-api-3-issuetype-issueTypeId-properties-propertyKey-get)
 - Assuming that migration to a cloud environment as been done using standard "export" and "import" of the XML instance or using [Cloud migration assistant](https://marketplace.atlassian.com/apps/1222010/jira-cloud-migration-assistant?hosting=server&tab=overview)
   There is one important item that you need to validate, **you need to make sure that your Issue types are been recognized by Xray**. 
   If you find in your instance reference to "Xray Test" Issue Type and other devivatives from it along side with the ones that you imported from server and if you don't see any functionalities of Xray in issues that you imported then **your imported issues are not recognized as Xray issues**.
@@ -24,33 +24,33 @@ Note : You will need to install some extra modules as such you may want to creat
   To fix this you will need to :
 
 
-      - move (using standard move Jira functionality) all migrated issues linked to Xray OnPremise Issue types to the Xray Cloud issues Types , or 
+     - move (using standard move Jira functionality) all migrated issues linked to Xray OnPremise Issue types to the Xray Cloud issues Types , or 
 
 
-      - or "transform" migrated Xray issue types into Xray Cloud issue types
+     - or "transform" migrated Xray issue types into Xray Cloud issue types
 
       
-          1)[Get the entity properties from Xray Cloud issue types](https://developer.atlassian.com/cloud/jira/platform/rest/v3/?utm_source=%2Fcloud%2Fjira%2Fplatform%2Frest&utm_medium=302#api-rest-api-3-issuetype-issueTypeId-properties-propertyKey-get) and [set](https://developer.atlassian.com/cloud/jira/platform/rest/v3/?utm_source=%2Fcloud%2Fjira%2Fplatform%2Frest&utm_medium=302#api-rest-api-3-issuetype-issueTypeId-properties-propertyKey-put) them into migrated issue types
+          1) [Get the entity properties from Xray Cloud issue types]( https://developer.atlassian.com/cloud/jira/platform/rest/v3/?utm_source=%2Fcloud%2Fjira%2Fplatform%2Frest&utm_medium=302#api-rest-api-3-issuetype-issueTypeId-properties-propertyKey-get) and [set](https://developer.atlassian.com/cloud/jira/platform/rest/v3/?utm_source=%2Fcloud%2Fjira%2Fplatform%2Frest&utm_medium=302#api-rest-api-3-issuetype-issueTypeId-properties-propertyKey-put) them into migrated issue types
           
           2)Delete cloud Xray Issue Types  (all the ones that start with "Xray ..") 
           
           3)Reinstall Xray
 
-          4) Perform a [Re-index](https://confluence.xpand-it.com/display/XRAYCLOUD/Project+Settings%3A+Re-Indexing). 
+          4)Perform a [Re-index](https://confluence.xpand-it.com/display/XRAYCLOUD/Project+Settings%3A+Re-Indexing). 
    
 
  - If you have migrated data to a cloud environment as been done using standard "export" and "import" of the XML instance or using [Cloud migration assistant](https://marketplace.atlassian.com/apps/1222010/jira-cloud-migration-assistant?hosting=server&tab=overview) 
  and you have not installed Xray then you will need to perform the below actions so that your imported issues are recognized as Xray Issue Types:
         
-          1)Install Xray
-        
-          2)[Get the entity properties from Xray Cloud issue types](https://developer.atlassian.com/cloud/jira/platform/rest/v3/?utm_source=%2Fcloud%2Fjira%2Fplatform%2Frest&utm_medium=302#api-rest-api-3-issuetype-issueTypeId-properties-propertyKey-get) and [set](https://developer.atlassian.com/cloud/jira/platform/rest/v3/?utm_source=%2Fcloud%2Fjira%2Fplatform%2Frest&utm_medium=302#api-rest-api-3-issuetype-issueTypeId-properties-propertyKey-put) them into migrated issue types
+   1)Install Xray
+       
+   2)[Get the entity properties from Xray Cloud issue types](https://developer.atlassian.com/cloud/jira/platform/rest/v3/?utm_source=%2Fcloud%2Fjira%2Fplatform%2Frest&utm_medium=302#api-rest-api-3-issuetype-issueTypeId-properties-propertyKey-get) and [set](https://developer.atlassian.com/cloud/jira/platform/rest/v3/?utm_source=%2Fcloud%2Fjira%2Fplatform%2Frest&utm_medium=302#api-rest-api-3-issuetype-issueTypeId-properties-propertyKey-put) them into migrated issue types
           
-          3)Delete cloud Xray Issue Types  
+   3)Delete cloud Xray Issue Types  
           
-          4)Reinstall Xray
+   4)Reinstall Xray
 
-          5)Perform a [Re-index](https://confluence.xpand-it.com/display/XRAYCLOUD/Project+Settings%3A+Re-Indexing). 
+   5)Perform a [Re-index](https://confluence.xpand-it.com/display/XRAYCLOUD/Project+Settings%3A+Re-Indexing). 
   
  - It may happen that the link type that was linking requirements to tests Onpremise is not recognized in cloud by Xray - makign the requirement coverage fail to provide the correct information. 
   This happens because when the user installs Xray it will look for the existance of the link Type "Test" (with "tests" as outward descriptin and "is tested by" as inward description) if it finds it associates that link type with Xray if it doesn't find it it creates a new Link type with that referred name and associates this Link Type as the Xray Link Type for linking requirements to tests.
