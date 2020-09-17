@@ -177,4 +177,5 @@ if keyStats:
     logging.info("------------------- #####    STATISTICS  - Statistics aggregated (with Push and no Push)  ##### ------------------- ")
 
     print(df.groupby(['Push']).describe())
-fileExport.close()
+if commandExecutionExceptions.export != None:
+    fileExport.close()

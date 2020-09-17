@@ -187,4 +187,5 @@ if keyStats:
 
     print (df.describe())
    
-fileExport.close()  
+if commandExecutionExceptions.export != None:
+    fileExport.close()

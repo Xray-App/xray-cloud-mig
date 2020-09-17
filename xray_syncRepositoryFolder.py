@@ -198,4 +198,5 @@ if keyStats:
     logging.info("------------------- #####    STATISTICS  - Aggregated data  ##### ------------------- ")
 
     print (df.describe())
-fileExport.close()
+if commandExecutionExceptions.export != None:
+    fileExport.close()
