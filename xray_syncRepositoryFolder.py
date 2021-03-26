@@ -97,51 +97,54 @@ paths = []
 
 def processFolders(repository, project,mutation,headers):
    
-    if "name" in repository and repository["name"] not in paths:
-        paths.append(repository["name"])
+    if "name" in repository: 
         path = repository["testRepositoryPath"] + "/" + repository["name"]
-        createFolder(headers,GLOBAL_url_xray,project.id,path,mutation)
-        page = 1
-        while True:
-            if "id" in repository and "totalTestCount" in repository:
-                nTests = repository["totalTestCount"]
-                if nTests > 0:
-                    # Get all Tests linked to OnPremise test execution
-                    r = requests.get('' + GLOBAL_onPremiseURL+'/rest/raven/1.0/api/testrepository/'+project.key +'/folders/' + str(repository['id'])  +'/tests?limit=100&page=' + str(page) +'', auth=HTTPBasicAuth(GLOBAL_basic_auth_user, GLOBAL_basic_auth_pass))
+    
+        if path not in paths:
+            paths.append(path)
+
+            createFolder(headers,GLOBAL_url_xray,project.id,path,mutation)
+            page = 1
+            while True:
+                if "id" in repository and "totalTestCount" in repository:
+                    nTests = repository["totalTestCount"]
+                    if nTests > 0:
+                        # Get all Tests linked to OnPremise test execution
+                        r = requests.get('' + GLOBAL_onPremiseURL+'/rest/raven/1.0/api/testrepository/'+project.key +'/folders/' + str(repository['id'])  +'/tests?limit=100&page=' + str(page) +'', auth=HTTPBasicAuth(GLOBAL_basic_auth_user, GLOBAL_basic_auth_pass))
                    
-                    if r.text == "" or r.text == None or r.text=="[]":
+                        if r.text == "" or r.text == None or r.text=="[]":
+                            break
+                        else :
+                            try:
+                                json_data = json.loads(r.text)
+                            except:
+                                logging.error(r.text)
+                                break
+                            listOfTests= []
+                            listofCloudIds = []
+                            if "tests" in json_data and str(json_data["tests"])!="[]":
+                                for test in json_data["tests"]:
+                                    listOfTests.append(test['key'])
+                                block_size = 100
+                                block_num = 0
+                                while True:   
+                                    start_idx = block_num*block_size
+                                    issues = jiraCloud.search_issues("issue in (" + str(listOfTests).replace('\'','\"').replace(']','').replace('[','') + ")", start_idx,block_size)
+                                    if len(issues) == 0:
+                                        # Retrieve issues until there are no more to come
+                                        break
+                                    block_num += 1
+                                    for issue in issues:
+                                        listofCloudIds.append(str(issue.id))
+                                formatedListOfTests = str(listofCloudIds).replace('\'','\"')
+                                addTestsToFolder(headers,project.id, path,formatedListOfTests,mutation)
+                            else:
+                                break
+                        page = page +1
+                    else:
                         break
-                    else :
-                        try:
-                            json_data = json.loads(r.text)
-                        except:
-                            logging.error(r.text)
-                            break
-                        listOfTests= []
-                        listofCloudIds = []
-                        if "tests" in json_data and str(json_data["tests"])!="[]":
-                            for test in json_data["tests"]:
-                                listOfTests.append(test['key'])
-                            block_size = 100
-                            block_num = 0
-                            while True:   
-                                start_idx = block_num*block_size
-                                issues = jiraCloud.search_issues("issue in (" + str(listOfTests).replace('\'','\"').replace(']','').replace('[','') + ")", start_idx,block_size)
-                                if len(issues) == 0:
-                                    # Retrieve issues until there are no more to come
-                                    break
-                                block_num += 1
-                                for issue in issues:
-                                    listofCloudIds.append(str(issue.id))
-                            formatedListOfTests = str(listofCloudIds).replace('\'','\"')
-                            addTestsToFolder(headers,project.id, path,formatedListOfTests,mutation)
-                        else:
-                            break
-                    page = page +1
                 else:
                     break
-            else:
-                break
 
     if repository['folders'] == "[]":
         logging.debug("No more folders.")
