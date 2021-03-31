@@ -1,5 +1,6 @@
 ## Description
 
+# NOTE: These scripts are provided AS-IS, with no support from the Xray team. They require a high level of technical expertise with Xray and Jira.
 
 ## Prepare your environment for running the scripts
 
