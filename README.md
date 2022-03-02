@@ -1,7 +1,7 @@
 
 ## Important Note
 
-Before using these scripts, please consider using the Jira Cloud Migration Assistant (JCMA) to migrate information from Xray Server to Xray Cloud. That process is the recommended way to migrate information between the two apps.**
+**Before using these scripts, please consider using the Jira Cloud Migration Assistant (JCMA) to migrate information from Xray Server to Xray Cloud. That process is the recommended way to migrate information between the two apps.**
 
 **Refer to this link for more information:** https://docs.getxray.app/display/XRAY/Jira+Cloud+Migration+Guide
 
