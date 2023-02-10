@@ -148,7 +148,7 @@ f = Figlet(font='slant')
 print (f.renderText('Your Xray Test Execution synchronizer!'))
 
 #Get auth token and build header for requests
-response = requests.post('https://xray.cloud.xpand-it.com/api/v1/authenticate', data={"client_id": GLOBAL_client_id,"client_secret":GLOBAL_client_secret})
+response = requests.post('https://xray.cloud.getxray.app/api/v1/authenticate', data={"client_id": GLOBAL_client_id,"client_secret":GLOBAL_client_secret})
 token=response.text.replace("\"","")
 #print(response.text)
 headers = {'Authorization':'Bearer %s' % token}

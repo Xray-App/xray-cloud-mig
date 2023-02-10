@@ -912,7 +912,7 @@ def updateTestRun(headers,mutation,run, startedOn,finishedOn,assigneeId,executed
 
 
 def renewToken():
-    response = requests.post('https://xray.cloud.xpand-it.com/api/v1/authenticate', data={"client_id": GLOBAL_client_id,"client_secret":GLOBAL_client_secret})
+    response = requests.post('https://xray.cloud.getxray.app/api/v1/authenticate', data={"client_id": GLOBAL_client_id,"client_secret":GLOBAL_client_secret})
     token=response.text.replace("\"","")
     headers = {'Authorization':'Bearer %s' % token}
     logging.info("Token renewed.")

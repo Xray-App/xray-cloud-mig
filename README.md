@@ -449,7 +449,7 @@ _Notes_
 | GLOBAL_statusStepXray  | GLOBAL_statusStepXray = {"PASS": "PASSED","TODO": "TO DO","Failing_acceptable": "Failing_acceptable"}    | Mapping of OnPremise status and Cloud Test Run Status    |
 | GLOBAL_onCloudMig  | GLOBAL_onCloudMig = "https://target.atlassian.net/"    |     |
 | GLOBAL_onPremiseURL  | GLOBAL_onPremiseURL = "https://source.instance.onpremise"    |    |
-| GLOBAL_url_xray  | GLOBAL_url_xray = 'https://xray.cloud.xpand-it.com/api/v1/graphql'   |     |
+| GLOBAL_url_xray  | GLOBAL_url_xray = 'https://xray.cloud.getxray.app/api/v1/graphql'   |     |
 | GLOBAL_client_id  | GLOBAL_client_id = 'XXXXXXX'     | Xray cloud clientID    |
 | GLOBAL_client_secret  | GLOBAL_client_secret = 'XXXXX'   | Xray cloud client secret    |
 | GLOBAL_apitoken  | GLOBAL_apitoken="yyyyyy"   | API Token for the cloud user    |

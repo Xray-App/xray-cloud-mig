@@ -65,7 +65,7 @@ GLOBAL_statusStepXray = {
 }
 GLOBAL_onCloudMig = "https://cloudmig.atlassian.net/"
 GLOBAL_onPremiseURL = "https://jira.mydomain.com"
-GLOBAL_url_xray = 'https://xray.cloud.xpand-it.com/api/v1/graphql'
+GLOBAL_url_xray = 'https://xray.cloud.getxray.app/api/v1/graphql'
 GLOBAL_client_id = 'DXXXXXXXXXXXXXXXXXXX'
 GLOBAL_client_secret = '8asd8asdasdasdasdasdasdasdasdadsdasdsadsadadasd'
 GLOBAL_apitoken="1q2w3e4r5t"

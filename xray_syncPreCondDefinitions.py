@@ -93,7 +93,7 @@ f = Figlet(font='slant')
 print (f.renderText('Your Xray PreCondition definition synchronizer!'))
 
 #Get auth token and build header for requests
-response = requests.post('https://xray.cloud.xpand-it.com/api/v1/authenticate', data={"client_id": GLOBAL_client_id,"client_secret":GLOBAL_client_secret})
+response = requests.post('https://xray.cloud.getxray.app/api/v1/authenticate', data={"client_id": GLOBAL_client_id,"client_secret":GLOBAL_client_secret})
 token=response.text.replace("\"","")
 headers = {'Authorization':'Bearer %s' % token}
 jira = JIRA(basic_auth=(GLOBAL_basic_auth_user, GLOBAL_basic_auth_pass),options={"server": GLOBAL_onPremiseURL})  # a username/password tuple
