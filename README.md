@@ -48,7 +48,7 @@ Note : You will need to install some extra modules as such you may want to creat
           
           3)Reinstall Xray
 
-          4)Perform a [Re-index](https://confluence.xpand-it.com/display/XRAYCLOUD/Project+Settings%3A+Re-Indexing). 
+          4)Perform a [Re-index](https://docs.getxray.app/display/XRAYCLOUD/Project+Settings%3A+Re-Indexing). 
    
 
  - If you have migrated data to a cloud environment as been done using standard "export" and "import" of the XML instance or using [Cloud migration assistant](https://marketplace.atlassian.com/apps/1222010/jira-cloud-migration-assistant?hosting=server&tab=overview) 
@@ -62,7 +62,7 @@ Note : You will need to install some extra modules as such you may want to creat
           
    4)Reinstall Xray
 
-   5)Perform a [Re-index](https://confluence.xpand-it.com/display/XRAYCLOUD/Project+Settings%3A+Re-Indexing). 
+   5)Perform a [Re-index](https://docs.getxray.app/display/XRAYCLOUD/Project+Settings%3A+Re-Indexing). 
   
  - It may happen that the link type that was linking requirements to tests Onpremise is not recognized in cloud by Xray - makign the requirement coverage fail to provide the correct information. 
   This happens because when the user installs Xray it will look for the existance of the link Type "Test" (with "tests" as outward descriptin and "is tested by" as inward description) if it finds it associates that link type with Xray if it doesn't find it it creates a new Link type with that referred name and associates this Link Type as the Xray Link Type for linking requirements to tests.
@@ -84,7 +84,7 @@ Note : You will need to install some extra modules as such you may want to creat
   
   
 - Pre conditions have been properly handled for been compatible with Atlassian Cloud.X-ray uses 'Pre-Condition' issue type On-Premise while in Cloud uses 'Precondition'. Issues need to be moved/update accordingly.
-- Projects in the scope of scripts have been [Re-indexed](https://confluence.xpand-it.com/display/XRAYCLOUD/Project+Settings%3A+Re-Indexing). 
+- Projects in the scope of scripts have been [Re-indexed](https://docs.getxray.app/display/XRAYCLOUD/Project+Settings%3A+Re-Indexing). 
 - The types of tests in Cloud musts contain all test types that will be sync ( Default are : Generic , Cucumber and Manual )
 - Test Status and Step Test Status need to be replicated or mapping need to be done in xray_variables.py
 - Issue Types that are handled by Xray need to be properly in Sync as when importing project Xray might not recognize On Premise issue Types ( Test , Test Plan, Test Set ) as Xray Issue Types.
@@ -113,7 +113,7 @@ Note : You will need to install some extra modules as such you may want to creat
 - **It doesn't create any issues in Cloud**. This tool should be seen as a syncronizer of Xray data only. 
 - Its not a two way syncronizer. It one way sycronizer OnPremise -> Cloud
 - It doesn't import gadgets, dashboards or reports
-- It doesn't [Test Runs customfields](https://confluence.xpand-it.com/display/XRAY/Configuring+Test+Run+Custom+Fieldsg)  or   [Test Step customfields](https://docs.getxray.app/display/XRAY/Xray+4.0.0+Release+Notes#Xray4.0.0ReleaseNotes-TestStepCustomFields)
+- It doesn't [Test Runs customfields](https://docs.getxray.app/display/XRAY/Configuring+Test+Run+Custom+Fields)  or   [Test Step customfields](https://docs.getxray.app/display/XRAY/Xray+4.0.0+Release+Notes#Xray4.0.0ReleaseNotes-TestStepCustomFields)
 
 ## Limitations
 
@@ -141,7 +141,7 @@ to be made. You may want to consider to restrict what you want to import or to s
 
 ## Wish List
 
---  Support [Test Runs customfields](https://confluence.xpand-it.com/display/XRAY/Configuring+Test+Run+Custom+Fieldsg)  and   [Test Step customfields](https://docs.getxray.app/display/XRAY/Xray+4.0.0+Release+Notes#Xray4.0.0ReleaseNotes-TestStepCustomFields)
+--  Support [Test Runs customfields](https://docs.getxay.app/display/XRAY/Configuring+Test+Run+Custom+Fields)  and   [Test Step customfields](https://docs.getxray.app/display/XRAY/Xray+4.0.0+Release+Notes#Xray4.0.0ReleaseNotes-TestStepCustomFields)
 
 
 ## Logging
@@ -189,7 +189,7 @@ _Notes_
 
 - Log information is sent to console and to a log file ( same name as script plus .log ) . Log is appended to file, this fiel can increase considerable.
 - The list of exported issues processed can be used as input (as a list of issues to ignore) for this script.
-- You can rerun multiple times the same script over the same scope of issues (however if there are any change in the specification of the tests and they are already added in a test execution then standard [Data Consistency](https://confluence.xpand-it.com/display/XRAYCLOUD/Test+Runs#TestRuns-Dataconsistency) rules apply) 
+- You can rerun multiple times the same script over the same scope of issues (however if there are any change in the specification of the tests and they are already added in a test execution then standard [Data Consistency](https://docs.getxray.app/display/XRAYCLOUD/Test+Runs#TestRuns-Dataconsistency) rules apply) 
 
 
 
@@ -212,7 +212,7 @@ _Notes_
 
 - Log information is sent to console and to a log file ( same name as script plus .log ) . Log is appended to file, this fiel can increase considerable.
 - The list of exported issues processed can be used as input (as a list of issues to ignore) for this script.
-- You can rerun multiple times the same script over the same scope of issues (however if there are any change in the specification of the tests and they are already added in a test execution then standard [Data Consistency](https://confluence.xpand-it.com/display/XRAYCLOUD/Test+Runs#TestRuns-Dataconsistency) rules apply) 
+- You can rerun multiple times the same script over the same scope of issues (however if there are any change in the specification of the tests and they are already added in a test execution then standard [Data Consistency](https://docs.getxray.app/display/XRAYCLOUD/Test+Runs#TestRuns-Dataconsistency) rules apply) 
 
 **xray_syncManualTestsDefinitions.py**
 
@@ -234,7 +234,7 @@ _Notes_
 
 - Log information is sent to console and to a log file ( same name as script plus .log ) . Log is appended to file, this fiel can increase considerable.
 - The list of exported issues processed can be used as input (as a list of issues to ignore) for this script.
-- If you want to rerun (run the over a scope of issues that were importer before ) you need to use the correct flag. Please note that tests that were already added in a test execution then standard [Data Consistency](https://confluence.xpand-it.com/display/XRAYCLOUD/Test+Runs#TestRuns-Dataconsistency) rules apply
+- If you want to rerun (run the over a scope of issues that were importer before ) you need to use the correct flag. Please note that tests that were already added in a test execution then standard [Data Consistency](https://docs.getxray.app/display/XRAYCLOUD/Test+Runs#TestRuns-Dataconsistency) rules apply
 
 **xray_syncTestExecs.py**
 
@@ -254,7 +254,7 @@ _Notes_
 
 - Log information is sent to console and to a log file ( same name as script plus .log ) . Log is appended to file, this fiel can increase considerable.
 - The list of exported issues processed can be used as input (as a list of issues to ignore) for this script.
-- If you want to rerun (run the over a scope of issues that were importer before ) you need to use the correct flag. Please note that tests that were already added in a test execution then standard [Data Consistency](https://confluence.xpand-it.com/display/XRAYCLOUD/Test+Runs#TestRuns-Dataconsistency) rules apply
+- If you want to rerun (run the over a scope of issues that were importer before ) you need to use the correct flag. Please note that tests that were already added in a test execution then standard [Data Consistency](https://docs.getxray.app/display/XRAYCLOUD/Test+Runs#TestRuns-Dataconsistency) rules apply
 - This script is not necessary to run if you are planning to execute xray_syncTestExecWithTests.py has this last one also includes adding the Test Execs definitions.
 
 **xray_syncPreCondDefinitions.py**
@@ -275,7 +275,7 @@ _Notes_
 
 - Log information is sent to console and to a log file ( same name as script plus .log ) . Log is appended to file, this fiel can increase considerable.
 - The list of exported issues processed can be used as input (as a list of issues to ignore) for this script.
-- You can rerun multiple times the same script over the same scope of issues (however if there are any change in the specification of the tests and they are already added in a test execution then standard [Data Consistency](https://confluence.xpand-it.com/display/XRAYCLOUD/Test+Runs#TestRuns-Dataconsistency) rules apply)
+- You can rerun multiple times the same script over the same scope of issues (however if there are any change in the specification of the tests and they are already added in a test execution then standard [Data Consistency](https://docs.getxray.app/display/XRAYCLOUD/Test+Runs#TestRuns-Dataconsistency) rules apply)
 
 
 
